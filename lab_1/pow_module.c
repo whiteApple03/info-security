@@ -4,7 +4,6 @@
 long long pow_by_module(long long a, long long exp, long long module) {
   long long res = 1;
   long long dp = a;
-  // printf("%lf\n", log2(exp));
   for (int i = 0; i <= log2(exp); i++) {
     if ((exp >> i) & 1) {
       res = (res * dp) % module;

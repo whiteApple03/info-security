@@ -26,10 +26,14 @@ long long *common_gcd(long long first_coof, long long second_coof) {
 }
 
 int main() {
-  int x = 28, y = 19;
+  long long x = 23423443, y = 34324;
   long long *solution = common_gcd(x, y);
-  printf("solution: x = %lld; y = %lld; gcd = %lld\n", solution[1], solution[2],
-         solution[0]);
+  if (solution == NULL) {
+    printf("error: a >= b\n");
+  } else {
+    printf("solution: x = %lld; y = %lld; gcd = %lld\n", solution[1],
+           solution[2], solution[0]);
+  }
   free(solution);
   return 0;
 }
