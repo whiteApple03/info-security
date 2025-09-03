@@ -1,7 +1,10 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
+
+#include <base_crypto.h>
 #define RES_GCD_SIZE 3
+
 
 long long *common_gcd(long long first_coof, long long second_coof) {
   if (first_coof < second_coof) {
@@ -25,15 +28,9 @@ long long *common_gcd(long long first_coof, long long second_coof) {
   return res;
 }
 
-int main() {
-  long long x = 23423443, y = 34324;
-  long long *solution = common_gcd(x, y);
-  if (solution == NULL) {
-    printf("error: a >= b\n");
-  } else {
-    printf("solution: x = %lld; y = %lld; gcd = %lld\n", solution[1],
-           solution[2], solution[0]);
-  }
-  free(solution);
-  return 0;
+long long gcd(long long a, long long b){
+	if(b==0)
+		return a;
+	return gcd(b, a%b);
 }
+
